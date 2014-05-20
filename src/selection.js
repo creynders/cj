@@ -1,4 +1,4 @@
-// Chris's non-adaptive selection method
+// Chris's selection method
 selectionNonAdaptive = function(players){
     //Find the player with the fewest decisions
     //Sort players in ascending order

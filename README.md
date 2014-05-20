@@ -10,8 +10,17 @@ Component Dependencies
 Methods
 -------
 **Name**  
-selectionNonAdaptive
+selectionNonAdaptive  
+Chris's selection algorithm
+
 
 **Input Parameters**  
     Players  
     JSON object description
+    
+**Output Parameters**
+    Array of two Player objects
+    
+### Functions ###
+* rasch = function(ability, difficulty)
+* estimateJudges = function(players, decisions, judges, callback)
