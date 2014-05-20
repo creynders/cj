@@ -1,9 +1,9 @@
-rasch = function(ability, difficulty){
+rasch = function(ability, difficulty) {
   prob = (Math.exp(ability - difficulty)) / (1 + Math.exp(ability - difficulty));
   return prob;
 }
 
-estimateJudges = function(players, decisions, judges, callback){
+estimateJudges = function(players, decisions, judges, callback) {
   markerInfit(players, decisions, judges, [] , callback);
 }
 
@@ -92,7 +92,7 @@ takeAPass = function(task, players, decisions, callback, iters, controller) {
   }
 }
 
-cjEstimation = function(task, playerids, players , decisions, updateHolder, callback, iters, controller){
+cjEstimation = function(task, playerids, players , decisions, updateHolder, callback, iters, controller) {
   if (playerids.length===0){
 	  //using a functional style, loop until array is empty
 	  callback(task, updateHolder, decisions, callback, iters, controller);

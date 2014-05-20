@@ -7,10 +7,8 @@ Component Dependencies
 ----------------------
 * Underscorejs.org
 
-Methods
--------
-**Name**  
-selectionNonAdaptive  
+### Selection Menthods ###
+##### selectionNonAdaptive #####
 Chris's selection algorithm
 
 
@@ -20,7 +18,18 @@ Chris's selection algorithm
     
 **Output Parameters**
     Array of two Player objects
-    
 ### Functions ###
 * rasch = function(ability, difficulty)
 * estimateJudges = function(players, decisions, judges, callback)
+* average = function(a) 
+* estimateReliability = function(players)
+* markerInfit = function(players, decisions, judges, updateHolder, callback)
+* resInfo = function(p) 
+* estimateCJ = function(task, decisions, players, controller)
+* cjEstimation = function(task, playerids, players , decisions, updateHolder, callback, iters, controller)
+
+### JSON Objects ###
+##### Players #####
+```
+Code block
+```
