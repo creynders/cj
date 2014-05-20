@@ -9,3 +9,9 @@ Component Dependencies
 
 Methods
 -------
+**Name**
+selectionNonAdaptive
+
+**Input Parameters**
+    Players
+    JSON object description
