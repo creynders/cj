@@ -20,8 +20,16 @@ describe( 'functions', function(){
     describe( 'rasch', function(){
         var rasch = statutils.rasch;
         it( 'should return 0.5 when the ability equals the difficulty', function(){
-            expect( rasch( 0, 0 ) ).to.equal( .5 );
+            expect( rasch( 0, 0 ) ).to.equal( 0.5 );
         } );
     } );
-
+  
+    describe('estimateReliability', function(){
+      var estimateReliability = statutils.estimateReliability;
+      it( 'should return correct reliability', function(){
+            expect( estimateReliability( [] ) ).to.equal( 0 );
+            expect( estimateReliability( fx.players ) ).to.be.between( 0.89,0.91 );
+        } );
+    });
+  
 } );
