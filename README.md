@@ -65,25 +65,36 @@ Chris's selection algorithm
 }  
 ```
 
-## Testing
+## Contributing
 
-The tests use Mocha as the testing framework, must.js as an assertion library and sinon.js for mocking and spying.
-
-### Installation
-
-Install the Grunt cli globally with:
+The Grunt CLI needs to be installed (globally):
 
 ```shell
 npm install -g grunt-cli
 ```
 
-(Could be you need to it as `sudo`.) Then cd to the project directory and:
+(Could be you need to it as `sudo`.) 
+Next `cd` to the project directory and:
 
 ```shell
 npm install
 ```
 
-### Usage
+This will install all necessary dependencies.
+
+### Building
+
+Some parts of this project are client-side compatible. To build the distribution files:
+
+```shell
+grunt build
+```
+
+This will generate the distributable and minified files into the `dist` directory.
+
+### Testing
+
+The tests use Mocha as the testing framework, must.js as an assertion library and sinon.js for mocking and spying.
 
 To run all the tests:
 
