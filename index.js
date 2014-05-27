@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
-    functions : require('./lib/functions'),
+    statutils : require('./lib/statutils'),
+    estimation : require('./lib/estimation'),
     selection : require('./lib/selection')
 };

@@ -42,6 +42,7 @@
     "lib",
     "index.js",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "dist"
   ]
 }
