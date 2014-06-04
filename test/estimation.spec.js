@@ -51,6 +51,39 @@ describe( 'estimation', function(){
             expect(statutils.wms(probs)).to.be.between(0.9,1.1);
         } );
     });
+
+    describe('playerProbs', function(){
+      var probabilities = estimation.probabilities;
+      var playerProbs = estimation.playerProbs;
+      var getPlayerStats = estimation.getPlayerStats;
+      it( 'should return correct player infit', function(){
+        var chosen = ["p2","p4","p2","p2","p4","p1","p1","p4","p3","p4","p2","p2","p2","p4","p3","p1","p4","p1","p3","p3"];
+        var notChosen = ["p1","p2","p4","p3","p2","p3","p3","p1","p1","p1","p1","p3","p4","p2","p1","p2","p3","p2","p1","p2"];
+        var players = [];
+        var playerids = ["p1","p2","p3","p4"];
+        var trueScores = [0.0000000,0.6797836,0.1528288,1.5665183];
+        var btProbs =[0.6636904,0.7082159,0.2917841,0.6287726,0.7082159,0.4618670,0.4618670,0.8272867,0.5381330,0.8272867,0.6636904,0.6287726,0.2917841,0.7082159,0.5381330,0.3363096,0.8043472,0.3363096,0.5381330,0.3712274];
+        var btInfit = [0.9854036,1.1562654,0.9181268,0.9188028];
+        for(var i=0; i<playerids.length; i++){
+          players.push({_id:playerids[i],trueScore:trueScores[i]});  
+        }
+        var decisions = [];
+        for(i=0;i<chosen.length;i++){
+          decisions.push({chosen:chosen[i],notChosen:notChosen[i]});  
+        }
+        var probs = probabilities(players , decisions);
+        //Script 1 in 11 decisions
+        expect(playerProbs(players[0],probs,decisions).length).to.equal(11);
+        for (i=0; i<probs.length; i++){
+          expect(probs[i].toFixed(2)).to.equal(btProbs[i].toFixed(2));
+        }
+        //Check stats for scripts
+        var infit = getPlayerStats(players, probs, decisions);
+        for (i=0;i<infit.length;i++){
+          expect(infit[i].toFixed(2)).to.equal(btInfit[i].toFixed(2));  
+        }
+      });
+    });  
   
     describe('judgeProbs', function(){
       var probabilities = estimation.probabilities;
