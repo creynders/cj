@@ -1,0 +1,7 @@
+name,date,error,count,cycles,hz
+"statutils.rasch","Thu Jun 05 2014 12:39:06 GMT+0200 (CEST)",,771648,8,11430851.445469325
+"statutils.average","Thu Jun 05 2014 12:39:12 GMT+0200 (CEST)",,665,6,9676.62921201671
+"statutils.resInfo","Thu Jun 05 2014 12:39:17 GMT+0200 (CEST)",,2628641,7,42066963.54221368
+"statutils.info","Thu Jun 05 2014 12:39:23 GMT+0200 (CEST)",,2699719,6,28937073.448982123
+"statutils.zsq","Thu Jun 05 2014 12:39:28 GMT+0200 (CEST)",,2080992,6,28022395.09128731
+"statutils.wms","Thu Jun 05 2014 12:39:33 GMT+0200 (CEST)",,733,3,9568.25819000771
