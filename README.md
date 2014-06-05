@@ -103,3 +103,13 @@ npm test
 # or
 grunt test
 ```
+
+### Benchmarking
+
+Run all benchmarks:
+
+```shell
+grunt benchmark
+```
+
+Results are written to  `benchmarks/results.csv`.
