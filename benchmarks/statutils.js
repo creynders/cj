@@ -15,9 +15,6 @@ module.exports = {
             statutils.average( _.pluck( fx.decisions, 'timeTaken' ) );
             statutils.average( [] );
         },
-        'statutils.resInfo' : function(){
-            statutils.resInfo( .5 );
-        },
         'statutils.info'    : function(){
             statutils.info( .5 );
         },
