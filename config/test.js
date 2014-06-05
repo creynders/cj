@@ -14,6 +14,10 @@ module.exports = function( grunt,
                 }
             },
             benchmark : {
+                options: {
+                  // This can also be set inside specific tests.
+                  displayResults: true
+                },
                 all     : {
                     src  : ['benchmarks/*.js'],
                     dest : 'benchmarks/results.csv'
