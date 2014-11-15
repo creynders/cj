@@ -4,7 +4,7 @@ cj
 Comparative Judgement Algorithms
 
 If you would like to learn more about Comparative Judgement, or to see how it works in action, please visit:
-http://www.nomoremarking.com 
+http://www.nomoremarking.com
 
 Component Dependencies
 ----------------------
@@ -77,7 +77,7 @@ The Grunt CLI needs to be installed (globally):
 npm install -g grunt-cli
 ```
 
-(Could be you need to it as `sudo`.)
+(Could be you need to do it as `sudo`.)
 Next `cd` to the project directory and:
 
 ```shell
