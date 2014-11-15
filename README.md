@@ -9,6 +9,7 @@ Component Dependencies
 
 ### Selection Methods ###
 * selectionNonAdaptive = function(players)
+
 NoMoreMarking selection algorithm, uses adaptivity conservatively
 
 ### Functions ###
