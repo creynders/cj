@@ -3,6 +3,9 @@ cj
 
 Comparative Judgement Algorithms
 
+If you would like to learn more about Comparative Judgement, or to see how it works in action, please visit:
+http://www.nomoremarking.com 
+
 Component Dependencies
 ----------------------
 * Underscorejs.org
