@@ -1,0 +1,80 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/Users/cbwheadon/.nvm/v0.10.33/bin/npm', 'publish' ]
+2 info using npm@2.1.8
+3 info using node@v0.10.33
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/cbwheadon/Documents/Node/cj',
+7 silly cache add   type: 'directory' }
+8 verbose tar pack [ '/Users/cbwheadon/.npm/cj/0.1.0/package.tgz',
+8 verbose tar pack   '/Users/cbwheadon/Documents/Node/cj' ]
+9 verbose tarball /Users/cbwheadon/.npm/cj/0.1.0/package.tgz
+10 verbose folder /Users/cbwheadon/Documents/Node/cj
+11 info prepublish cj@0.1.0
+12 verbose addLocalTarball adding from inside cache /Users/cbwheadon/.npm/cj/0.1.0/package.tgz
+13 silly cache afterAdd cj@0.1.0
+14 verbose afterAdd /Users/cbwheadon/.npm/cj/0.1.0/package/package.json not in flight; writing
+15 verbose afterAdd /Users/cbwheadon/.npm/cj/0.1.0/package/package.json written
+16 silly publish { name: 'cj',
+16 silly publish   version: '0.1.0',
+16 silly publish   description: 'Comparative Judgement Algorithms',
+16 silly publish   private: true,
+16 silly publish   main: 'index.js',
+16 silly publish   scripts: { test: 'grunt test' },
+16 silly publish   repository: { type: 'git', url: 'git://github.com/NoMoreMarking/cj.git' },
+16 silly publish   keywords: [ 'comparative', 'assessment', 'statistics' ],
+16 silly publish   author: '',
+16 silly publish   license: 'GPL',
+16 silly publish   bugs: { url: 'https://github.com/NoMoreMarking/cj/issues' },
+16 silly publish   homepage: 'https://github.com/NoMoreMarking/cj',
+16 silly publish   dependencies: { underscore: '^1.6.0' },
+16 silly publish   devDependencies:
+16 silly publish    { chai: '^1.10.0',
+16 silly publish      grunt: '~0.4.5',
+16 silly publish      'grunt-benchmark': '^0.2.0',
+16 silly publish      'grunt-contrib-clean': '^0.5.0',
+16 silly publish      'grunt-contrib-concat': '^0.4.0',
+16 silly publish      'grunt-contrib-uglify': '^0.4.0',
+16 silly publish      'grunt-mocha-test': '^0.12.3',
+16 silly publish      'jit-grunt': '^0.9.0',
+16 silly publish      'load-grunt-configs': '^0.4.0',
+16 silly publish      mocha: '^2.0.1',
+16 silly publish      must: '^0.11.0',
+16 silly publish      'require-directory': '^1.2.0',
+16 silly publish      sinon: '^1.10.0',
+16 silly publish      supertest: '^0.15.0',
+16 silly publish      'time-grunt': '^0.3.1' },
+16 silly publish   files: [ 'lib', 'index.js', 'README.md', 'LICENSE', 'dist' ],
+16 silly publish   readme: 'cj\n==\n\nComparative Judgement Algorithms\n\nIf you would like to learn more about Comparative Judgement, or to see how it works in action, please visit:\nhttp://www.nomoremarking.com\n\nComponent Dependencies\n----------------------\n* Underscorejs.org\n\n### Selection Methods ###\n* selectionNonAdaptive = function(players)\n\nNoMoreMarking selection algorithm, uses adaptivity conservatively\n\n### Functions ###\n* rasch = function(ability, difficulty)\n* estimateJudges = function(players, decisions, judges, callback)\n* average = function(a)\n* estimateReliability = function(players)\n* markerInfit = function(players, decisions, judges, updateHolder, callback)\n* resInfo = function(p)\n* estimateCJ = function(task, decisions, players, controller)\n* cjEstimation = function(task, playerids, players , decisions, updateHolder, callback, iters, controller)\n\n### JSON Objects ###\n##### Players #####\n```\n{\n        "_id" : "22QCYH8oJYsoHYz69",\n        "comparisons" : 0,\n        "createdAt" : "2014-05-06 08:59:28",\n        "decisions" : [  "tgHjzRze7jdTqbyYA" ],\n        "observedScore" : 0,\n        "owner" : "xDMzcHpZDhKXJ7wzk",\n        "selected" : 0,\n        "task" : "YCpw984EfTJmeTJeR",\n        "timeTaken" : 0,\n        "trueScore" : 0\n}  \n```\n##### Judges #####\n```\n{\n        "_id" : "23aa6mFLA5MaWBXPZ",\n        "comparisons" : 20,\n        "createdAt" : "2014-05-078 15:29:28",\n        "email" : "a@b.c",  \n        "frm_welcome_email_sent" : 0,\n        "owner" : "avbgKt4ygLfyoWQGw",\n        "quota" : 20,\n        "task" : "6ZEKR54w45a5hn8gk",\n        "timeTaken" : 11443.797999999999,\n        "trueScore" : 0.8063503582501295  \n}\n```\n##### Decisions #####\n```\n{\n        "task" : "8M5b8yxRatHicgaqu",\n        "chosen" : "hpGN6h4TJJrurRBrZ",\n        "notChosen" : "zA3ZRBJnTHSrytaxo",\n        "timeTaken" : 10.207,\n        "judge" : "ZyNFixaAqxTADWmZw",\n        "createdAt" : "2014-05-07 14:23:34",\n        "_id" : "235x5zwkfm32DvpCZ"\n}  \n```\n\n## Contributing\n\nThe Grunt CLI needs to be installed (globally):\n\n```shell\nnpm install -g grunt-cli\n```\n\n(Could be you need to do it as `sudo`.)\nNext `cd` to the project directory and:\n\n```shell\nnpm install\n```\n\nThis will install all necessary dependencies.\n\n### Building\n\nSome parts of this project are client-side compatible. To build the distribution files:\n\n```shell\ngrunt build\n```\n\nThis will generate the distributable and minified files into the `dist` directory.\n\n### Testing\n\nThe tests use Mocha as the testing framework, must.js as an assertion library and sinon.js for mocking and spying.\n\nTo run all the tests:\n\n```shell\nnpm test\n# or\ngrunt test\n```\n\n### Benchmarking\n\nRun all benchmarks:\n\n```shell\ngrunt benchmark\n```\n\nResults are written to  `benchmarks/results.csv`.\n',
+16 silly publish   readmeFilename: 'README.md',
+16 silly publish   gitHead: '57b85e38e2fd266064c470ccc91b477e25219f6c',
+16 silly publish   _id: 'cj@0.1.0',
+16 silly publish   _shasum: '12b976a13169acddeb02598ff9f55f0489f9f862',
+16 silly publish   _from: '.' }
+17 verbose stack Error: This package has been marked as private
+17 verbose stack Remove the 'private' field from the package.json to publish it.
+17 verbose stack     at publish_ (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/lib/publish.js:98:5)
+17 verbose stack     at Array.1 (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+17 verbose stack     at LOOP (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+17 verbose stack     at LOOP (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+17 verbose stack     at chain (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+17 verbose stack     at /Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/lib/publish.js:64:5
+17 verbose stack     at RES (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+17 verbose stack     at f (/Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/once/once.js:17:25)
+17 verbose stack     at /Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/lib/cache.js:345:14
+17 verbose stack     at /Users/cbwheadon/.nvm/v0.10.33/lib/node_modules/npm/node_modules/write-file-atomic/index.js:29:15
+18 verbose cwd /Users/cbwheadon/Documents/Node/cj
+19 error Darwin 14.0.0
+20 error argv "node" "/Users/cbwheadon/.nvm/v0.10.33/bin/npm" "publish"
+21 error node v0.10.33
+22 error npm  v2.1.8
+23 error This package has been marked as private
+23 error Remove the 'private' field from the package.json to publish it.
+24 error If you need help, you may report this error at:
+24 error     <http://github.com/npm/npm/issues>
+25 verbose exit [ 1, true ]

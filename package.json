@@ -2,7 +2,7 @@
   "name": "cj",
   "version": "0.1.0",
   "description": "Comparative Judgement Algorithms",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
