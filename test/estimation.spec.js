@@ -63,6 +63,17 @@ describe( 'estimation', function(){
               }
             });
           });
+      it( 'should return correct true scores again', function(){
+        var pl1 = { _id: 'F3uFGRi7Yg2rYSknt', comparisons: 6, decisions: [ '95bwHigh3ETPp3t8c','7Nz5AdG8vsXopZXmJ','95bwHigh3ETPp3t8c','7Nz5AdG8vsXopZXmJ','7Nz5AdG8vsXopZXmJ','95bwHigh3ETPp3t8c' ],observedScore: 3 };
+        var pl2 = { _id: '7Nz5AdG8vsXopZXmJ',comparisons: 7,decisions: [ 'F3uFGRi7Yg2rYSknt','95bwHigh3ETPp3t8c','F3uFGRi7Yg2rYSknt','95bwHigh3ETPp3t8c', 'F3uFGRi7Yg2rYSknt', '95bwHigh3ETPp3t8c','95bwHigh3ETPp3t8c' ], observedScore: 0 };
+        var pl3 = { _id: '95bwHigh3ETPp3t8c',comparisons: 7,decisions: [ 'F3uFGRi7Yg2rYSknt','7Nz5AdG8vsXopZXmJ','F3uFGRi7Yg2rYSknt','7Nz5AdG8vsXopZXmJ','F3uFGRi7Yg2rYSknt','7Nz5AdG8vsXopZXmJ','7Nz5AdG8vsXopZXmJ' ], observedScore: 7 };
+        var pls = [pl1,pl2,pl3];
+            estimateCJ('1', pls, function(task, players){
+              for(var i=0; i<pls.length; i++){
+                expect(pls[i].trueScore).to.be.between(-10,10);
+              }
+            });
+          });
     });
 
     describe('playerProbs', function(){
