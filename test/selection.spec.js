@@ -33,9 +33,8 @@ describe( 'selection', function(){
       it('should be an opponent not compared to yet if possible', function(){
         var pls = [];
         for (var i=0; i<100; i++){
-          pls.push({_id:i, selected:0, opponents:[]});
+          pls.push({_id:i, selected:0, opponents:[], trueScore: (Math.random() * 5)-5, seTrueScore: 0.5 });
         }
-        //Should have [0,1],[0,2],[1,2]
         for(var j=0; j<4950; j++){
           var pair = selection.selectionNonAdaptive(pls);
           for (var i=0; i <pls.length; i++){
@@ -52,6 +51,21 @@ describe( 'selection', function(){
         for(var i=0; i<pls.length; i++){
           expect(pls[i].selected).to.be.equal.to(99);
           expect(pls[i].opponents.length).to.be.equal.to(_.uniq(pls[i].opponents).length);
+        }
+        //Now go adaptive
+        for(var j=0; j<100; j++){
+          var pair = selection.selectionNonAdaptive(pls);
+          expect(Math.abs(pair[0].trueScore - pair[1].trueScore)).to.be.below(0.5);
+          for (var i=0; i <pls.length; i++){
+            if(pls[i]._id == pair[0]._id){
+              pls[i].selected ++;
+              pls[i].opponents.push(pair[1]._id)
+            }
+            if(pls[i]._id == pair[1]._id){
+              pls[i].selected ++;
+              pls[i].opponents.push(pair[0]._id)
+            }
+          }
         }
       });
     });
