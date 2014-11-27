@@ -59,11 +59,11 @@ describe( 'selection', function(){
           for (var i=0; i <pls.length; i++){
             if(pls[i]._id == pair[0]._id){
               pls[i].selected ++;
-              pls[i].opponents.push(pair[1]._id)
+              pls[i].opponents.push(pair[1]._id);
             }
             if(pls[i]._id == pair[1]._id){
               pls[i].selected ++;
-              pls[i].opponents.push(pair[0]._id)
+              pls[i].opponents.push(pair[0]._id);
             }
           }
         }
