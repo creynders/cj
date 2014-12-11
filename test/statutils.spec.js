@@ -23,7 +23,7 @@ describe( 'statutils', function(){
             expect( rasch( 0, 0 ) ).to.equal( 0.5 );
         } );
     } );
-  
+
     describe('info', function(){
       var info = statutils.info;
       it('should return p * (1-p)',function(){
@@ -31,8 +31,8 @@ describe( 'statutils', function(){
           expect(info(0.3)).to.equal(0.21);
           expect(info(0.9)).to.be.between(0.0899,0.09);
       })
-    });  
-  
+    });
+
     describe('zsq', function(){
       var zsq = statutils.zsq;
       it('should return res ^ 2 / info',function(){
@@ -40,8 +40,8 @@ describe( 'statutils', function(){
           expect(zsq(0.1)).to.equal(9);
           expect(zsq(0.99)).to.be.between(0.01010101,0.01010102);
       })
-    }); 
-  
+    });
+
     describe('wms', function(){
       var wms = statutils.wms;
       var probs = [0.5,0.5,0.5,0.5];
@@ -54,5 +54,12 @@ describe( 'statutils', function(){
           expect(wms(probs2)).to.be.below(1);
       })
     });
-  
+
+    describe('k_combinations', function(){
+      var k_combinations = statutils.k_combinations;
+      var combs = k_combinations([1, 2, 3], 2);
+      var expectedCombs =  [[1,2], [1,3], [2, 3]];
+      expect(combs).eql(expectedCombs);
+    });
+
 });

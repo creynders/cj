@@ -3,12 +3,16 @@
 'use strict';
 var selection = require('..').selection;
 var _ = require('underscore');
+var statutils = require( '..' ).statutils;
 
 describe( 'selection', function(){
 
     describe( 'spec', function(){
         it( 'should pass', function(){
             expect( selection.selectionNonAdaptive).to.not.be.undefined();
+        } );
+        it( 'should pass', function(){
+            expect( selection.selectionByJudge).to.not.be.undefined();
         } );
         it( 'should have access to the fixtures', function(){
             expect( fx.decisions ).to.not.be.undefined();
@@ -67,6 +71,31 @@ describe( 'selection', function(){
             }
           }
         }
+      });
+      it('for selection by judge, player should be the least judged by that judge.', function(){
+        var pls = [];
+        var judge = {_id:'j1'};
+        var ids = ['a','b','c','d'];
+        for (var i=0; i<ids.length; i++){
+          pls.push({_id:ids[i]});
+        }
+        var decisions = [];
+        decisions.push({chosen:'a',notChosen:'b',judge:'j2'});
+        decisions.push({chosen:'a',notChosen:'d',judge:'j2'});
+        //Get all pairs
+        var pairs = [];
+        for(var i=0;i<6;i++){
+          var pair = selection.selectionByJudge(judge, pls, decisions);
+          decisions.push({chosen:pair[0]._id, notChosen:pair[1]._id, judge:judge._id});
+          pairs.push([pair[0]._id,pair[1]._id]);
+        }
+        //Check all pairs
+        var combs = statutils.k_combinations(ids, 2);
+        var diff = _.filter(combs, function(obj){ return !_.findWhere(pairs, obj) & !_.findWhere(pairs, [obj[1],obj[0]]);});
+        expect(diff).eql([]);
+        //All pairs exhausted
+        var pair = selection.selectionByJudge(judge, pls, decisions);
+        expect(pair).to.have.length(2);
       });
     });
 });
