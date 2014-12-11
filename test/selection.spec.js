@@ -85,7 +85,7 @@ describe( 'selection', function(){
         //Get all pairs
         var pairs = [];
         for(var i=0;i<6;i++){
-          var pair = selection.selectionByJudge(judge, pls, decisions);
+          var pair = selection.selectionByJudge(judge._id, pls, decisions);
           decisions.push({chosen:pair[0]._id, notChosen:pair[1]._id, judge:judge._id});
           pairs.push([pair[0]._id,pair[1]._id]);
         }
@@ -94,7 +94,7 @@ describe( 'selection', function(){
         var diff = _.filter(combs, function(obj){ return !_.findWhere(pairs, obj) & !_.findWhere(pairs, [obj[1],obj[0]]);});
         expect(diff).eql([]);
         //All pairs exhausted
-        var pair = selection.selectionByJudge(judge, pls, decisions);
+        var pair = selection.selectionByJudge(judge._id, pls, decisions);
         expect(pair).to.have.length(2);
       });
     });
