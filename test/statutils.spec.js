@@ -2,6 +2,7 @@
 /*global expect, fx, sinon*/
 'use strict';
 var statutils = require( '..' ).statutils;
+var _ = require('underscore');
 
 describe( 'statutils', function(){
 
@@ -60,6 +61,52 @@ describe( 'statutils', function(){
       var combs = k_combinations([1, 2, 3], 2);
       var expectedCombs =  [[1,2], [1,3], [2, 3]];
       expect(combs).eql(expectedCombs);
+    });
+
+    describe('factorial',function(){
+      var factorial = statutils.factorial;
+      expect(factorial(3)).to.equal(6);
+      expect(factorial(4)).to.equal(24);
+    });
+
+    describe('wq', function(){
+      var wq = statutils.wq;
+      expect(wq(4,5,1)).to.equal(5);
+      expect(wq(2,5,1)).to.equal(1.5);
+      var out = +wq(4,20,1).toFixed(4);
+      expect(out).to.equal(1.0526);
+    });
+
+    describe('iI', function(){
+      var iI = statutils.iI;
+      var ii = iI(0,[0,0]);
+      expect(ii).eql([0.25,.25]);
+      var ii = iI(0,[-5,-4.5,-4]);
+      var ii = _.map(ii, function(i){return (+i.toFixed(4))});
+      expect(ii).eql([0.0066,0.0109,0.0177]);
+      var ii = iI(0,[-5,-4,-3]);
+      var ii = _.map(ii, function(i){return (+i.toFixed(4))});
+      expect(ii).eql([0.0066,0.0177,0.0452]);
+    });
+
+    describe('calciPR', function(){
+      var calciPR = statutils.calciPR;
+      var theta = 0;
+      var items = [-5,-4,-3,-2,-1,0,1,2,3,4,5];
+      var thr = 20;
+      var done = 4;
+      var AP = 1;
+      var iPr = calciPR(theta, items, done, thr, AP);
+      var iPr = _.map(iPr, function(i){return +i.toFixed(4)});
+      expect(iPr).eql([0.0057,0.0160,0.0429,0.1041,0.2016,0.2596,0.2016,0.1041,0.0429,0.0160,0.0057]);
+    });
+
+    describe('sampleVector', function(){
+      var sampleVector = statutils.sampleVector;
+      var vec = [0.0057,0.0160,0.0429,0.1041,0.2016,0.2596,0.2016,0.1041,0.0429,0.0160,0.0057];
+      var runif = 0.2;
+      var chosen = sampleVector(vec,runif);
+      expect(chosen).to.equal(4);
     });
 
 });
