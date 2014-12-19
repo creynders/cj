@@ -135,10 +135,10 @@ describe( 'selection', function(){
         });
         it('should work if there is only one valid opponent', function(){
           var pls = [];
-          for(var i = 0; i<5; i++){
+          for(var i = 0; i<4; i++){
             pls.push({_id:i, selected:i+1, comparisons:i+1, opponents:[0]});
-          }
-          pls[0].opponents = [1,2,3];
+          };
+          pls.push({_id:4, selected:4, comparisons:4});
           for (var i=0; i <100; i++){
             var pair = selection.selectionAdaptive(pls);
             expect(pair[1]._id).to.equal(4);
@@ -147,11 +147,10 @@ describe( 'selection', function(){
         it('should work if all opponents matched', function(){
           var pls = [];
           for(var i = 0; i<5; i++){
-            pls.push({_id:i, selected:i+1, comparisons:i+1});
+            pls.push({_id:i, selected:i+1, comparisons:i+1, opponents:[0]});
           }
-          pls[0].opponents = [1,2,3,4];
           var pair = selection.selectionAdaptive(pls);
-          expect(pair[1]._id).to.be.between(1,4);
+          expect(pair[1]._id).to.be.between(0,5);
         });        
         it('should return partner closer to ability more often than not', function(){
           var pls = [];
