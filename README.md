@@ -21,7 +21,7 @@ Component Dependencies
 
 ##### function selectionAdaptive( players, thr, AP ) #####
 
-Uses the progressive method (Barrada, Olea, Ponsoda, and Abad, 2008, 2010; Revuelta and Pon-soda, 1998)
+Uses the progressive method (Barrada, Olea, Ponsoda, and Abad, 2008, 2010; Revuelta and Ponsoda, 1998)
 
     thr - the number of comparisons expected for a item (analagous to test length)
     AP - the acceleration parameter
