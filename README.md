@@ -12,27 +12,23 @@ Component Dependencies
 
 ### Pair Selection Methods ###
 
-```
 *function selectionNonAdaptive (players)*
 1. Shuffles the items, then selects the item with fewest judgements
 2. Pairs the item with any item not yet paired with
 3. If all pairs exhausted, finds a acript with +/- se of true score
 4. If none are found in step 3. returns the item with the next fewest judgements
-```
 
-```
 *function selectionAdaptive( players, thr, AP )*
 Uses the progressive method (Barrada, Olea, Ponsoda, and Abad, 2008, 2010; Revuelta and Pon-soda, 1998)
 thr - the number of comparisons expected for a item (analagous to test length)
 AP - the acceleration parameter
 
 With the progressive method the item selected is the one that maximizes the sum of two elements,a random part and a part determined by the Fisher information.  At the beginning of the test, the importance of the random element is maximum; as the test advances, the information increases its relevance in the item selection. The speed for the transition from purely random selection to purely information based selection is determined by the acceleration parameter, set by the argument AP, where higher values imply a greater importance of the random element during the test.
-```
 
-```
+
 *function selectionByJudge(idJudge, players, decisions)*
 Ensures every judge sees every pair. Useful if you want to construct a reliable scale for every judge.
-```
+
 
 ### Functions ###
 * rasch = function(ability, difficulty)
