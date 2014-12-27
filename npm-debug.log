@@ -1,89 +1,25 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/Users/cbwheadon/.nvm/v0.10.34/bin/node',
-1 verbose cli   '/Users/cbwheadon/.nvm/v0.10.34/bin/npm',
-1 verbose cli   'publish' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.34
-4 warn invalid config init.author.url="www.nomoremarking.com"
-5 warn invalid config Must be a full url with 'http://'
-6 verbose publish [ '.' ]
-7 verbose cache add [ '.', null ]
-8 verbose cache add name=undefined spec="." args=[".",null]
-9 verbose parsed url { protocol: null,
-9 verbose parsed url   slashes: null,
-9 verbose parsed url   auth: null,
-9 verbose parsed url   host: null,
-9 verbose parsed url   port: null,
-9 verbose parsed url   hostname: null,
-9 verbose parsed url   hash: null,
-9 verbose parsed url   search: null,
-9 verbose parsed url   query: null,
-9 verbose parsed url   pathname: '.',
-9 verbose parsed url   path: '.',
-9 verbose parsed url   href: '.' }
-10 silly lockFile 3a52ce78- .
-11 verbose lock . /Users/cbwheadon/.npm/3a52ce78-.lock
-12 verbose tar pack [ '/Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz',
-12 verbose tar pack   '.' ]
-13 verbose tarball /Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz
-14 verbose folder .
-15 info prepublish comparative-judgement@0.1.8
-16 silly lockFile 1f1177db-tar tar://.
-17 verbose lock tar://. /Users/cbwheadon/.npm/1f1177db-tar.lock
-18 silly lockFile ed32e958-tive-judgement-0-1-8-package-tgz tar:///Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz
-19 verbose lock tar:///Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz /Users/cbwheadon/.npm/ed32e958-tive-judgement-0-1-8-package-tgz.lock
-20 silly lockFile 1f1177db-tar tar://.
-21 silly lockFile 1f1177db-tar tar://.
-22 silly lockFile ed32e958-tive-judgement-0-1-8-package-tgz tar:///Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz
-23 silly lockFile ed32e958-tive-judgement-0-1-8-package-tgz tar:///Users/cbwheadon/.npm/comparative-judgement/0.1.8/package.tgz
-24 silly lockFile 8fc33d64-parative-judgement-0-1-8-package /Users/cbwheadon/.npm/comparative-judgement/0.1.8/package
-25 verbose lock /Users/cbwheadon/.npm/comparative-judgement/0.1.8/package /Users/cbwheadon/.npm/8fc33d64-parative-judgement-0-1-8-package.lock
-26 silly lockFile 8fc33d64-parative-judgement-0-1-8-package /Users/cbwheadon/.npm/comparative-judgement/0.1.8/package
-27 silly lockFile 8fc33d64-parative-judgement-0-1-8-package /Users/cbwheadon/.npm/comparative-judgement/0.1.8/package
-28 silly lockFile 3a52ce78- .
-29 silly lockFile 3a52ce78- .
-30 silly publish { name: 'comparative-judgement',
-30 silly publish   version: '0.1.8',
-30 silly publish   description: 'Comparative Judgement Algorithms',
-30 silly publish   private: false,
-30 silly publish   main: 'index.js',
-30 silly publish   scripts: { test: 'grunt test' },
-30 silly publish   repository: { type: 'git', url: 'git://github.com/NoMoreMarking/cj.git' },
-30 silly publish   keywords: [ 'comparative', 'assessment', 'statistics' ],
-30 silly publish   author: '',
-30 silly publish   license: 'GPL',
-30 silly publish   bugs: { url: 'https://github.com/NoMoreMarking/cj/issues' },
-30 silly publish   homepage: 'https://github.com/NoMoreMarking/cj',
-30 silly publish   dependencies: { underscore: '^1.6.0' },
-30 silly publish   devDependencies:
-30 silly publish    { chai: '^1.10.0',
-30 silly publish      grunt: '~0.4.5',
-30 silly publish      'grunt-benchmark': '^0.2.0',
-30 silly publish      'grunt-contrib-clean': '^0.5.0',
-30 silly publish      'grunt-contrib-concat': '^0.4.0',
-30 silly publish      'grunt-contrib-uglify': '^0.4.0',
-30 silly publish      'grunt-mocha-test': '^0.12.3',
-30 silly publish      'jit-grunt': '^0.9.0',
-30 silly publish      'load-grunt-configs': '^0.4.0',
-30 silly publish      mocha: '^2.0.1',
-30 silly publish      must: '^0.11.0',
-30 silly publish      'require-directory': '^1.2.0',
-30 silly publish      sinon: '^1.10.0',
-30 silly publish      supertest: '^0.15.0',
-30 silly publish      'time-grunt': '^0.3.1' },
-30 silly publish   files: [ 'lib', 'index.js', 'README.md', 'LICENSE', 'dist' ],
-30 silly publish   readme: 'cj\n==\n\nComparative Judgement Algorithms\n\nIf you would like to learn more about Comparative Judgement, or to see how it works in action, please visit:\nhttp://www.nomoremarking.com\n\nComponent Dependencies\n----------------------\n* Underscorejs.org\n\n### Pair Selection Methods ###\n\n* function selectionNonAdaptive (players)\n1. Shffles the items, then selects the item with fewest judgements\n2. Pairs the item with any item not yet paired with\n3. If all pairs exhausted, finds a acript with +/- se of true score\n4. If none are found in step 3. returns the item with the next fewest judgements\n\n* function selectionAdaptive( players, thr, AP )\nUses the progressive method (Barrada, Olea, Ponsoda, and Abad, 2008, 2010; Revuelta and Pon-soda, 1998)\nthr - the number of comparisons expected for a item (analagous to test length)\nAP - the acceleration parameter\n\nWith the progressive method the item selected is the one that maximizes the sum of two elements,a random part and a part determined by the Fisher information.  At the beginning of the test, the importance of the random element is maximum; as the test advances, the information increases its relevance in the item selection. The speed for the transition from purely random selection to purely information based selection is determined by the acceleration parameter, set by the argument AP, where higher values imply a greater importance of the random element during the test.\n\n\n* function selectionByJudge(idJudge, players, decisions)\nEnsures every judge sees every pair. Useful if you want to construct a reliable scale for every judge.\n\n\n### Functions ###\n* rasch = function(ability, difficulty)\n* estimateJudges = function(players, decisions, judges, callback)\n* average = function(a)\n* estimateReliability = function(players)\n* markerInfit = function(players, decisions, judges, updateHolder, callback)\n* resInfo = function(p)\n* estimateCJ = function(task, decisions, players, controller)\n* cjEstimation = function(task, playerids, players , decisions, updateHolder, callback, iters, controller)\n\n### JSON Objects ###\n##### Players #####\n```\n{\n        "_id" : "22QCYH8oJYsoHYz69",\n        "comparisons" : 0,\n        "createdAt" : "2014-05-06 08:59:28",\n        "decisions" : [  "tgHjzRze7jdTqbyYA" ],\n        "observedScore" : 0,\n        "owner" : "xDMzcHpZDhKXJ7wzk",\n        "selected" : 0,\n        "task" : "YCpw984EfTJmeTJeR",\n        "timeTaken" : 0,\n        "trueScore" : 0\n}  \n```\n##### Judges #####\n```\n{\n        "_id" : "23aa6mFLA5MaWBXPZ",\n        "comparisons" : 20,\n        "createdAt" : "2014-05-078 15:29:28",\n        "email" : "a@b.c",  \n        "frm_welcome_email_sent" : 0,\n        "owner" : "avbgKt4ygLfyoWQGw",\n        "quota" : 20,\n        "task" : "6ZEKR54w45a5hn8gk",\n        "timeTaken" : 11443.797999999999,\n        "trueScore" : 0.8063503582501295  \n}\n```\n##### Decisions #####\n```\n{\n        "task" : "8M5b8yxRatHicgaqu",\n        "chosen" : "hpGN6h4TJJrurRBrZ",\n        "notChosen" : "zA3ZRBJnTHSrytaxo",\n        "timeTaken" : 10.207,\n        "judge" : "ZyNFixaAqxTADWmZw",\n        "createdAt" : "2014-05-07 14:23:34",\n        "_id" : "235x5zwkfm32DvpCZ"\n}  \n```\n\n## Contributing\n\nThe Grunt CLI needs to be installed (globally):\n\n```shell\nnpm install -g grunt-cli\n```\n\n(Could be you need to do it as `sudo`.)\nNext `cd` to the project directory and:\n\n```shell\nnpm install\n```\n\nThis will install all necessary dependencies.\n\n### Building\n\nSome parts of this project are client-side compatible. To build the distribution files:\n\n```shell\ngrunt build\n```\n\nThis will generate the distributable and minified files into the `dist` directory.\n\n### Testing\n\nThe tests use Mocha as the testing framework, must.js as an assertion library and sinon.js for mocking and spying.\n\nTo run all the tests:\n\n```shell\nnpm test\n# or\ngrunt test\n```\n\n### Benchmarking\n\nRun all benchmarks:\n\n```shell\ngrunt benchmark\n```\n\nResults are written to  `benchmarks/results.csv`.\n',
-30 silly publish   readmeFilename: 'README.md',
-30 silly publish   gitHead: '31e1610f7925bf88353453003e6e9926f7c1ae39',
-30 silly publish   _id: 'comparative-judgement@0.1.8',
-30 silly publish   _shasum: '72d6b1f7e5d6a486f853bdb5e6fe09a0dee5a929',
-30 silly publish   _from: '.' }
-31 error need auth auth and email required for publishing
-31 error need auth You need to authorize this machine using `npm adduser`
-32 error System Darwin 14.0.0
-33 error command "/Users/cbwheadon/.nvm/v0.10.34/bin/node" "/Users/cbwheadon/.nvm/v0.10.34/bin/npm" "publish"
-34 error cwd /Users/cbwheadon/Documents/Node/cj
-35 error node -v v0.10.34
-36 error npm -v 1.4.28
-37 error code ENEEDAUTH
-38 verbose exit [ 1, true ]
+1 verbose cli [ 'node', '/Users/cbwheadon/.nvm/v0.10.35/bin/npm', 'publish' ]
+2 info using npm@2.1.14
+3 info using node@v0.10.35
+4 verbose publish [ '.' ]
+5 verbose stack Error: Invalid version: "0.1.8.1"
+5 verbose stack     at Object.module.exports.fixVersionField (/Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:190:13)
+5 verbose stack     at /Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:30:38
+5 verbose stack     at Array.forEach (native)
+5 verbose stack     at normalize (/Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:29:15)
+5 verbose stack     at final (/Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/read-package-json/read-json.js:342:33)
+5 verbose stack     at then (/Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/read-package-json/read-json.js:126:33)
+5 verbose stack     at /Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/read-package-json/read-json.js:331:40
+5 verbose stack     at evalmachine.<anonymous>:272:14
+5 verbose stack     at /Users/cbwheadon/.nvm/v0.10.35/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+5 verbose stack     at Object.oncomplete (evalmachine.<anonymous>:108:15)
+6 verbose cwd /Users/cbwheadon/Documents/Node/cj
+7 error Darwin 14.0.0
+8 error argv "node" "/Users/cbwheadon/.nvm/v0.10.35/bin/npm" "publish"
+9 error node v0.10.35
+10 error npm  v2.1.14
+11 error Invalid version: "0.1.8.1"
+12 error If you need help, you may report this error at:
+12 error     <http://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]

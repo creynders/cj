@@ -1,6 +1,6 @@
 {
   "name": "comparative-judgement",
-  "version": "0.1.8.1",
+  "version": "0.1.9",
   "description": "Comparative Judgement Algorithms",
   "private": false,
   "main": "index.js",
