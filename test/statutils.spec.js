@@ -87,6 +87,9 @@ describe( 'statutils', function(){
       var ii = iI(0,[-5,-4,-3]);
       var ii = _.map(ii, function(i){return (+i.toFixed(4))});
       expect(ii).eql([0.0066,0.0177,0.0452]);
+      var ii = iI(4.15,[5.05,5.05,-4.15,-4.15,-5.05]);
+      var ii = _.map(ii, function(i){return (+i.toFixed(4))});
+      expect(ii).eql([0.2055,0.2055,0.0002,0.0002,0.0001]);
     });
 
     describe('calciPR', function(){
@@ -99,6 +102,22 @@ describe( 'statutils', function(){
       var iPr = calciPR(theta, items, done, thr, AP);
       var iPr = _.map(iPr, function(i){return +i.toFixed(4)});
       expect(iPr).eql([0.0057,0.0160,0.0429,0.1041,0.2016,0.2596,0.2016,0.1041,0.0429,0.0160,0.0057]);
+      var theta = 5.47;
+      var items = [5.45,2.33,-0.12,-2.57,-6.02];
+      var thr = 20;
+      var done = 2;
+      var AP = 1;
+      var iPr = calciPR(theta, items, done, thr, AP);
+      var iPr = _.map(iPr, function(i){return +i.toFixed(4)});
+      expect(iPr).eql([0.5031,0.2816,0.1331,0.0615,0.0207]);
+      var theta = 5.47;
+      var items = [5.45,2.33,-0.12,-2.57,-6.02];
+      var thr = 20;
+      var done = 22;
+      var AP = 1;
+      var iPr = calciPR(theta, items, done, thr, AP);
+      var iPr = _.map(iPr, function(i){return +i.toFixed(4)});
+      expect(iPr).eql([1,0,0,0,0]);
     });
 
     describe('sampleVector', function(){
