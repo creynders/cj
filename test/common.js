@@ -1,3 +1,6 @@
+/* jshint -W024, expr:true */
+/*jslint node: true */
+/*global expect, fx, sinon*/
 'use strict';
 
 var Must = require('must');
