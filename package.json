@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/NoMoreMarking/cj",
   "dependencies": {
+    "fast-csv": "^0.5.4",
     "underscore": "^1.6.0"
   },
   "devDependencies": {

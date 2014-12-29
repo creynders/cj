@@ -5,6 +5,22 @@
 'use strict';
 var simulation = require('..').simulation;
 
+describe('iterate', function(){
+	it('should return an array of players', function(){
+		expect(simulation.iterate).to.not.be.undefined();
+		var iterate = simulation.iterate;
+		var iters = 2;
+		var players =4;
+		var judgements = 2 * players;
+		var selection = 'adaptive';
+		var thru = judgements;
+		var AP =1;
+		iterate(iters, players, judgements, selection, thru, AP, function(result){
+			//console.log(result);
+		});
+	});
+});
+
 describe('simulation', function(){
 	describe('spec', function(){
 		it('should have access to simulation', function(){
@@ -13,11 +29,12 @@ describe('simulation', function(){
 		it('should have access to the fixtures', function(){
 			expect(fx.players).to.not.be.undefined();
 		});
-		it('should return an array with correlations', function(){
+		it('should return an array with players', function(){
 			expect(simulation.simulate).to.not.be.undefined();
 			var simulate = simulation.simulate;
-			var sim1 = simulate(4, 'adaptive', 20, 1, 1234);
-			expect(sim1.length).to.not.equal(0);
+			var sim1 = simulate(8, 20, 'adaptive', 20, 1, function(players){
+				//console.log(players);
+			});
 		});
 	});
 
