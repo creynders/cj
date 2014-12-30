@@ -12,7 +12,7 @@ module.exports = {
 };
 
 var simulation = require('./lib/simulation');
-var iterate = simulation.iterate;
+var simulate = simulation.simulate;
 var args = process.argv.slice(2);
 var iters = +args[0];
 var players = +args[1];
@@ -21,6 +21,6 @@ var selection = args[3];
 var thru = +args[4];
 var AP = +args[5];
 
-iterate(iters, players, judgements, selection, thru, AP, function(result){
-  console.log(result);
+simulate(players, judgements, selection, thru, AP, iters, [], function(result){
+  console.log('saved ',result, ' rows');
 });
