@@ -20,7 +20,8 @@ var judgements = +args[2];
 var selection = args[3];
 var thru = +args[4];
 var AP = +args[5];
+var seed = args[6];
 
-simulate(players, judgements, selection, thru, AP, iters, [], function(result){
+simulate(players, judgements, selection, thru, AP, iters, seed, [], function(result){
   console.log('saved ',result, ' rows');
 });
