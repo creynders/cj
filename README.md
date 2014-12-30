@@ -10,6 +10,19 @@ Component Dependencies
 ----------------------
 * Underscorejs.org
 
+### Simulations ###
+    //Simulate a set of comparative judgement results 
+    //Saved to the file out.csv
+    node index.js iterations players judgements method thru AP seed
+    // Run 10 simulations of 8 candidates receiving 20 judgements using the adaptive method
+    // With an expect number of 20 judgements per candidate
+    // With an acceleration parameter of 2
+    // And a seed for the simulation of 1234
+    node index.js 10 8 20 'adaptive' 20 2 1234
+    // Run 10 simulations of 8 candidates receiving 20 judgements using the distributed method
+    // And a seed for the simulation of 1234
+    node index.js 10 8 20 'distributed' 20 2 1234
+    
 ### Pair Selection Methods ###
 
 #####  function selectionNonAdaptive (players) #####
