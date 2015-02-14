@@ -11,7 +11,7 @@ Component Dependencies
 * Underscorejs.org
 
 ### Simulations ###
-    //Simulate a set of comparative judgement results 
+    //Simulate a set of comparative judgement results
     //Saved to the file out.csv
     node index.js iterations players judgements method thru AP seed
     // Run 10 simulations of 8 candidates receiving 20 judgements using the adaptive method
@@ -22,15 +22,15 @@ Component Dependencies
     // Run 10 simulations of 8 candidates receiving 20 judgements using the distributed method
     // And a seed for the simulation of 1234
     node index.js 10 8 20 'distributed' 20 2 1234
-    
+=======
+
 ### Pair Selection Methods ###
 
 #####  function selectionNonAdaptive (players) #####
 
 1. Shuffles the items, then selects the item with fewest judgements
 2. Pairs the item with any item not yet paired with
-3. If all pairs exhausted, finds a acript with +/- se of true score
-4. If none are found in step 3. returns the item with the next fewest judgements
+3. If all pairs exhausted, returns the item with the next fewest judgements
 
 ##### function selectionAdaptive( players, thr, AP ) #####
 
