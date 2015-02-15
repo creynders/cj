@@ -11,17 +11,18 @@ Component Dependencies
 * Underscorejs.org
 
 ### Simulations ###
+
     //Simulate a set of comparative judgement results
     //Saved to the file out.csv
-    node index.js iterations players judgements method thru AP seed
-    // Run 10 simulations of 8 candidates receiving 20 judgements using the adaptive method
-    // With an expect number of 20 judgements per candidate
+    node index.js -i iterations -p players -j judgements -s selection-method -t thru -a AP -sd seed
+    // Run 10 simulations of 20 candidates receiving 190 judgements using the adaptive method
+    // With an expect number of 19 judgements per candidate
     // With an acceleration parameter of 2
     // And a seed for the simulation of 1234
-    node index.js 10 8 20 'adaptive' 20 2 1234
-    // Run 10 simulations of 8 candidates receiving 20 judgements using the distributed method
+    node index.js -s -i 10 -p 20 -j 190 -s 'adaptive' -t 19 -a 2 -sd 1234
+    // Run 10 simulations of 20 candidates receiving 190 judgements using the distributed method
     // And a seed for the simulation of 1234
-    node index.js 10 8 20 'distributed' 20 2 1234
+    node index.js -s -i 10 -p 20 -j 120 'distributed' -sd 1234
 
 ### Pair Selection Methods ###
 
@@ -44,6 +45,11 @@ With the progressive method the item selected is the one that maximizes the sum 
 
 Ensures every judge sees every pair. Useful if you want to construct a reliable scale for every judge.
 
+### Utility Functions ###
+
+##### Return a scale for every judge from a csv download of decisions from nomoremarking.com #####
+
+node index.js -b -d ~/Downloads/image-study-beauty.csv -e image_b_1@gmx.net,image_b_2@gmx.net,image_b_3@gmx.net,image_b_4@gmx.net
 
 ### Functions ###
 * rasch = function(ability, difficulty)
