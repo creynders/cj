@@ -49,7 +49,7 @@ Ensures every judge sees every pair. Useful if you want to construct a reliable 
 
 ##### Return a scale for every judge from a csv download of decisions from nomoremarking.com #####
 
-node index.js -b -d ~/Downloads/image-study-beauty.csv -e image_b_1@gmx.net,image_b_2@gmx.net,image_b_3@gmx.net,image_b_4@gmx.net
+node index.js -b -d ~/Downloads/image-study-beauty.csv -e 'image_b_1@gmx.net','image_b_2@gmx.net'
 
 ### Functions ###
 * rasch = function(ability, difficulty)
